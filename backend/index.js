@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(cors());
 const PORT = process.env.PORT || 5000;
 
+app.set("trust proxy", 1);
 // A. Rate Limiting: To prevent spam and abuse as you suggested.
 const limiter = rateLimit({
 	windowMs: 1 * 60 * 1000, // 1 minute
