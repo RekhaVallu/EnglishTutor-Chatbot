@@ -55,7 +55,7 @@ export const extractTopic = async (message) => {
   const result = await callGroqChat([
     { role: "system", content: "You extract topic names only. Reply with ONLY the topic name, nothing else." },
     { role: "user", content: prompt }
-  ], { model: "llama-3.1-8b-instant", temperature: 0, maxTokens: 15 });
+  ], { model: "llama-3.3-70b-versatile", temperature: 0, maxTokens: 15 });
 
   return result.replace(/[."'`]/g, "").toLowerCase().trim();
 };
